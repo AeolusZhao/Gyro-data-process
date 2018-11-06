@@ -7,7 +7,8 @@ y = []
 with open( "log_0002.csv", 'r') as csvfile:
     csvfile.readline()
     dataReader = csv.reader(csvfile, delimiter=';')
-    for row in dataReader:
+    interestingrows=[row for idx, row in enumerate(dataReader) if idx in (28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 62)]
+    for row in interestingrows:
         x.append(row[0])
         y.append(row[6])
 
